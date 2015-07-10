@@ -1,0 +1,46 @@
+//
+//  PrefixHeader.pch
+//  XZHNetwork
+//
+//  Created by sfpay on 15/2/9.
+//  Copyright (c) 2015年 zain. All rights reserved.
+//
+
+#ifndef XZHNetwork_PrefixHeader_pch
+#define XZHNetwork_PrefixHeader_pch
+
+#import <Foundation/Foundation.h>
+
+//打开NSURLCache的Log输出
+#define CACHE_DEBUG_MODE
+
+#define kHostName     @"http://api.lanrenzhoumo.com"
+//#define kHostName   @"https://api.foursquare.com/"
+#define kAppId      @"CMXDTX41EITPPW1GDNKSK3FAB0L4PYFG0HHCBTZ0L3M30QOX"
+#define kAppSecret  @"ZSJMMWS5HVXQLY4WVIESVRYEF4BTBMAZF3KPEYTP1G1V2BQM"
+
+typedef void (^SuccessComplet)(id responseObj);
+typedef void (^ErrorCompelt)(NSNumber *errCode);
+typedef void (^FailComplet)(NSError *error);
+typedef void (^VoidComplet)(void);
+
+#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/UIKit+AFNetworking.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
+#import <ReactiveViewModel/ReactiveViewModel.h>
+#import <Masonry/Masonry.h>
+#import <BFKit/BFKit.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <JSONModel/JSONModel.h>
+
+#import "BaseViewController.h"
+#import "NSObject+Commom.h"
+#import "XZHURLCache.h"
+
+#import "AppDelegate.h"
+#define API_CLIENT (ApiClientManager *)[APP_DELEGATE apiClientManager]
+
+#define USER_DEFAULT (NSUserDefaults *)[NSUserDefaults standardUserDefaults]
+
+#endif
